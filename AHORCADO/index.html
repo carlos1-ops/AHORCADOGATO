@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juegos Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎮 Ahorcado & Gato 🕹️</h1>
+  <div id="menu" class="fade-in">
+    <button onclick="mostrarJuego('ahorcado')">Ahorcado</button><br>
+    <button onclick="mostrarJuego('gato')">Gato</button>
+  </div>
+
+  <!-- Ahorcado -->
+  <div id="ahorcado" class="juego fade-in" style="display:none;">
+    <div id="imagen-ahorcado">
+      <img id="imagen" src="images/ahorcado0.png" alt="Ahorcado" width="200">
+    </div>
+
+    <div id="form-palabra-secreta">
+      <h2>Ingresar palabra secreta</h2>
+      <input type="password" id="palabra-input" maxlength="20">
+      <button onclick="establecerPalabra()">Empezar juego</button>
+    </div>
+
+    <div id="juego-ahorcado" style="display:none;">
+      <h2>Juego del Ahorcado</h2>
+      <p id="palabra-secreta"></p>
+      <p>Errores: <span id="errores">0</span></p>
+      <p>Letras usadas: <span id="letras-usadas"></span></p>
+      <input type="text" id="input-letra" maxlength="1">
+      <button onclick="adivinarLetra()">Adivinar</button>
+      <p id="mensaje"></p>
+      <button onclick="volverAlMenu()">Volver al menú</button>
+    </div>
+  </div>
+
+  <!-- Gato -->
+  <div id="gato" class="juego fade-in" style="display:none;">
+    <h2>Juego del Gato (Tic Tac Toe)</h2>
+    <div id="tablero-gato"></div>
+    <p id="ganador"></p>
+    <button onclick="reiniciarGato()">Reiniciar</button>
+    <button onclick="volverAlMenu()">Volver al menú</button>
+  </div>
+
+  <!-- Decoraciones -->
+  <div style="position: fixed; top: 20px; left: 20px; font-size: 100px; opacity: 0.05; color: #00ffcc;">X</div>
+  <div style="position: fixed; top: 100px; right: 20px; font-size: 120px; opacity: 0.05; color: #00ffcc;">O</div>
+  <div style="position: fixed; bottom: 20px; left: 50px; font-size: 90px; opacity: 0.05; color: #00ffcc;">A</div>
+  <div style="position: fixed; bottom: 80px; right: 40px; font-size: 110px; opacity: 0.05; color: #00ffcc;">Z</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
